@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WineBay – Logout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f6fa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+
+/* Card */
+.logout-box{
+  background:#fff;
+  padding:40px 30px;
+  width:100%;
+  max-width:420px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.logout-box i{
+  font-size:50px;
+  color:#2c2c54;
+  margin-bottom:15px;
+}
+
+.logout-box h2{
+  margin-bottom:10px;
+  color:#2c2c54;
+}
+
+.logout-box p{
+  color:#777;
+  margin-bottom:30px;
+}
+
+/* Buttons */
+.btn-group{
+  display:flex;
+  gap:15px;
+}
+
+.btn{
+  flex:1;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.logout{
+  background:#eb4d4b;
+  color:#fff;
+}
+
+.cancel{
+  background:#dcdde1;
+}
+.logout-box img {
+  width: 120px;
+}
+
+/* Responsive */
+@media (max-width:480px){
+  .btn-group{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logout-box">
+  <a class="navbar-brand" href="index.html"><img src="images/wine-logo-black.png"></a>
+  <h2>Logout</h2>
+  <p>Are you sure you want to logout from WineBay?</p>
+
+  <div class="btn-group">
+    <button class="btn logout" onclick="confirmLogout()">Yes, Logout</button>
+    <button class="btn cancel" onclick="goBack()">Cancel</button>
+  </div>
+</div>
+
+<script>
+function confirmLogout(){
+  // clear login session (example)
+  localStorage.clear();
+  sessionStorage.clear();
+
+  // redirect to login page
+  window.location.href = "login.html";
+}
+
+function goBack(){
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WineBay – Customers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+li a{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+li a:hover{
+  color: #c49b63; /* unga theme color */
+}
+
+body{
+  background:#f5f6fa;
+}
+
+/* Layout */
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+  width:240px;
+  background:#2c2c54;
+  color:#fff;
+  padding:20px;
+  transition:0.3s;
+}
+
+.sidebar img{
+  width:150px;
+  display:block;
+  margin:0 auto 30px;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar ul li{
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.sidebar ul li i{
+  margin-right:10px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+  background:#40407a;
+}
+
+/* Main */
+.main{
+  flex:1;
+  padding:20px;
+}
+
+/* Topbar */
+.topbar{
+  background:#fff;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  border-radius:6px;
+  margin-bottom:20px;
+}
+
+.menu-btn{
+  font-size:22px;
+  cursor:pointer;
+  display:none;
+}
+
+/* Table */
+.table-box{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+}
+
+.table-responsive{
+  width:100%;
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+table th, table td{
+  padding:12px;
+  border-bottom:1px solid #eee;
+  text-align:left;
+  white-space:nowrap;
+}
+
+table th{
+  background:#f1f1f1;
+}
+
+.badge{
+  padding:4px 10px;
+  border-radius:4px;
+  font-size:12px;
+}
+
+.active{
+  background:#dff9fb;
+  color:#22a6b3;
+}
+
+.inactive{
+  background:#f8d7da;
+  color:#c0392b;
+}
+
+.action-btn{
+  padding:6px 10px;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.view{
+  background:#2c2c54;
+  color:#fff;
+}
+
+.block{
+  background:#eb4d4b;
+  color:#fff;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+  .menu-btn{
+    display:block;
+  }
+
+  .sidebar{
+    position:fixed;
+    left:-260px;
+    top:0;
+    height:100%;
+    z-index:1000;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .dashboard{
+    flex-direction:column;
+  }
+}
+
+/* Overlay */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  z-index:999;
+}
+
+.overlay.active{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <img src="images/wine-logo-white.png">
+    <ul>
+      <li>
+  <a href="dashboard.html">
+    <i class="fa-solid fa-gauge"></i> Dashboard
+  </a>
+</li>
+
+<li>
+  <a href="our-products.html">
+    <i class="fa-solid fa-wine-bottle"></i> Products
+  </a>
+</li>
+
+<li>
+  <a href="orders.html">
+    <i class="fa-solid fa-cart-shopping"></i> Orders
+  </a>
+</li>
+
+<li>
+  <a href="customers.html">
+    <i class="fa-solid fa-users"></i> Customers
+  </a>
+</li>
+
+<li>
+  <a href="reports.html">
+    <i class="fa-solid fa-chart-line"></i> Reports
+  </a>
+</li>
+
+<li>
+  <a href="logout.html">
+    <i class="fa-solid fa-right-from-bracket"></i> Logout
+  </a>
+</li>
+
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
+      <h3>Customers</h3>
+    </div>
+
+    <!-- Customers Table -->
+    <div class="table-box">
+      <h3>Customer List</h3><br>
+
+      <div class="table-responsive">
+        <table>
+          <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Orders</th>
+            <th>Spent</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+
+          <tr>
+            <td>#C001</td>
+            <td>John Smith</td>
+            <td>john@email.com</td>
+            <td>12</td>
+            <td>$1,240</td>
+            <td><span class="badge active">Active</span></td>
+            <td>
+              <button class="action-btn view">View</button>
+              <button class="action-btn block">Block</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>#C002</td>
+            <td>Maria Garcia</td>
+            <td>maria@email.com</td>
+            <td>6</td>
+            <td>$680</td>
+            <td><span class="badge active">Active</span></td>
+            <td>
+              <button class="action-btn view">View</button>
+              <button class="action-btn block">Block</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>#C003</td>
+            <td>Alex Johnson</td>
+            <td>alex@email.com</td>
+            <td>2</td>
+            <td>$190</td>
+            <td><span class="badge inactive">Inactive</span></td>
+            <td>
+              <button class="action-btn view">View</button>
+              <button class="action-btn block">Block</button>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
