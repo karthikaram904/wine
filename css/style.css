@@ -851,6 +851,9 @@ pre {
   justify-content: center;
   margin-left: -40px;
 }
+  html, body {
+    overflow-x: hidden;
+}
   .col-md-6.d-flex.align-items-center {
   justify-content: center;
 }
