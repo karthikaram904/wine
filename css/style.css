@@ -846,6 +846,15 @@ pre {
     margin-left: 83.33333%; }
   .offset-sm-11 {
     margin-left: 91.66667%; } }
+@media (max-width: 768px) {
+  .col-md-6.d-flex.justify-content-md-end {
+  justify-content: center;
+  margin-left: -40px;
+}
+  .col-md-6.d-flex.align-items-center {
+  justify-content: center;
+}
+}
 
 @media (min-width: 768px) {
   .col-md {
