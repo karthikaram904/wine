@@ -9219,7 +9219,9 @@ textarea.form-control {
     margin-bottom: 10px; }
     .ftco-footer .ftco-footer-widget ul li a {
       color: rgba(255, 255, 255, 0.5); }
-      .ftco-footer .ftco-footer-widget ul li a span {
+      .ftco-footer .ftco-footer-widget ul li a span.fa {
+        font-family: FontAwesome;
+  font-size: 12px;
         }
   .ftco-footer .ftco-footer-widget .btn-primary {
     background: #fff !important;
