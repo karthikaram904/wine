@@ -9220,8 +9220,8 @@ textarea.form-control {
     .ftco-footer .ftco-footer-widget ul li a {
       color: rgba(255, 255, 255, 0.5); }
       .ftco-footer .ftco-footer-widget ul li a span {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 14px; }
+       /* color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;*/ }
   .ftco-footer .ftco-footer-widget .btn-primary {
     background: #fff !important;
     border: 2px solid #fff !important; }
