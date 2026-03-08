@@ -1569,7 +1569,15 @@ pre {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .table-responsive-sm > .table-bordered {
-      border: 0; } }
+      border: 0; }
+ .hero-wrap.hero-wrap-2.home2.d-flex.align-items-center {
+  min-height: 90vh;
+  height: 1000px !important;
+}
+    .hero-wrap.hero-wrap-2.home2 .col-md-7 {
+  padding-top: 80px;
+}
+}
 
 @media (max-width: 767.98px) {
   .table-responsive-md {
