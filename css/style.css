@@ -447,7 +447,12 @@ pre {
   margin-left: auto; }
   @media (min-width: 576px) {
     .container {
-      max-width: 540px; } }
+      max-width: 540px; }
+  .hero-wrap.hero-wrap-2.home2.d-flex.align-items-center {
+  min-height: 90vh;
+  height: 1000px !important;
+}
+  }
   @media (min-width: 768px) {
     .container {
       max-width: 720px; } }
