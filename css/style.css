@@ -10880,6 +10880,12 @@ margin-right: 0px !important;
     }
 
     body {
+        padding-top: 29px;  /* navbar height adjust */
+    }
+
+}
+@media (max-width: 551px) {
+ body {
         padding-top: 80px;  /* navbar height adjust */
     }
 
