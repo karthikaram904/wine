@@ -1568,6 +1568,13 @@ pre {
   min-height: 90vh;
   height: 1000px !important;
 }
+  .hero-offer-box {
+  padding: 10px;
+  margin-bottom: 50px;
+}
+  .hero-offer-box h3,.hero-offer-box h2,.hero-offer-box span {
+  font-size: 20px;
+}
     .hero-wrap.hero-wrap-2.home2 .col-md-7 {
   padding-top: 180px;
 }
